@@ -23,7 +23,32 @@ This should lead to a page where you can add the name of your API key and what p
 
 <img src="https://github.com/racheesingh/ripe-atlas-starter/blob/master/add-api-key.png" width="400" align="middle">
 
-Keep track of the API key for future reference.
+Keep track of the API key for future reference. Now we will work on using this API key for launching measurements from RIPE Atlas.
+.. code:: python
+    from datetime import datetime
+    from ripe.atlas.cousteau import (
+      Ping,
+      Traceroute,
+      AtlasSource,
+      AtlasCreateRequest
+    )
+
+    ATLAS_API_KEY = <insert your API key>
+    traceroute = Traceroute(
+        af=4,
+        target="www.github.com",
+        description="trace to Github",
+    )
+
+    source = AtlasSource(type="country", value="IR", requested=5)
+    atlas_request = AtlasCreateRequest(
+        start_time=datetime.utcnow(),
+        key=ATLAS_API_KEY,
+        measurements=[traceroute],
+        sources=[source],
+        is_oneoff=True
+    )
+    (is_success, response) = atlas_request.create()
 
 ## Using existing measurements
 -- API for pulling measurements
