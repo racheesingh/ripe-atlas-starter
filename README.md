@@ -23,7 +23,8 @@ This should lead to a page where you can add the name of your API key and what p
 
 <img src="https://github.com/racheesingh/ripe-atlas-starter/blob/master/add-api-key.png" width="400" align="middle">
 
-Keep track of the API key for future reference. Now we will work on using this API key for launching measurements from RIPE Atlas.
+Keep track of the API key for future reference. Now we will work on using this API key for launching measurements from RIPE Atlas. RIPE Atlas provides a Python API called [Costeau](https://github.com/RIPE-NCC/ripe-atlas-cousteau) for scheduling measurements programmatically. Install the API from source and use the following snippet to import the classes relevant for scheduling a measurement:
+
 ```python
 from datetime import datetime
     from ripe.atlas.cousteau import (
@@ -34,13 +35,26 @@ from datetime import datetime
     )
 
     ATLAS_API_KEY = <insert your API key>
+ ```
+
+Then, we define an IPv4 traceroute measurement towards `www.github.com`. The `description` field is a string of your choice to describe what the measurement is doing.
+ 
+ ```python
     traceroute = Traceroute(
         af=4,
         target="www.github.com",
         description="trace to Github",
     )
+```
+Now, we will select a set of source probes to run this traceroute from by asking the `AtlasSource` API to fetch 5 RIPE probes in Iran (specified by `country=IR` argument, `IR` is the ISO country code for Iran).
 
+```python
     source = AtlasSource(type="country", value="IR", requested=5)
+```
+
+We can put the source and the traceroute together into an `AtlasCreateRequest` which creates a measurement request. the `is_oneoff` field specifies if you want to schedule this measurement to run once as opposed to running it at a regular interval. Note that until now the meausrement has not been fired, no credits have been used. The call to `create` the `atlas_request` object fires the measurement. The first return value from `create` is a flag specifying if the measurement succeeded. 
+
+```python
     atlas_request = AtlasCreateRequest(
         start_time=datetime.utcnow(),
         key=ATLAS_API_KEY,
