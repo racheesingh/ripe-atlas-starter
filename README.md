@@ -24,8 +24,8 @@ This should lead to a page where you can add the name of your API key and what p
 <img src="https://github.com/racheesingh/ripe-atlas-starter/blob/master/add-api-key.png" width="400" align="middle">
 
 Keep track of the API key for future reference. Now we will work on using this API key for launching measurements from RIPE Atlas.
-.. code:: python
-    from datetime import datetime
+```python
+from datetime import datetime
     from ripe.atlas.cousteau import (
       Ping,
       Traceroute,
@@ -49,7 +49,7 @@ Keep track of the API key for future reference. Now we will work on using this A
         is_oneoff=True
     )
     (is_success, response) = atlas_request.create()
-
+```
 ## Using existing measurements
 -- API for pulling measurements
 -- Same for UDMs
