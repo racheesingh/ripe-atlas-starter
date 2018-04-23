@@ -15,7 +15,9 @@ Each RIPE probe is uniquely identified by an `ID`. A list of all RIPE probes, th
 Using RIPE Atlas, one can perform a number of Internet measurements, like `ping`, `traceroute`, `DNS` resolutions etc. Each measurement has a certain cost associated with it. This cost the amount of measurement credit you will need to spend to run the measurement. This is explained in detail [here](https://atlas.ripe.net/docs/credits/). In few words, a traceroute to single destination costs 30 credits and a ping costs 10 credits. This means traceroutes are 3X more expensive compared to pings in general.
 
 ## User-defined Measurements
-In this sub-section we will discuss the process of launching one's measurements using RIPE Atlas. First step is to create an API key on the 
+In this sub-section we will discuss the process of launching one's measurements using RIPE Atlas. First step is to create an API key via the RIPE Atlas website. While logged in withyour credentials, navigate to [https://atlas.ripe.net/keys/](https://atlas.ripe.net/keys/). Click on the "Create API Key" Button:
+
+![api-key] (https://github.com/racheesingh/ripe-atlas-starter/blob/master/api-create-key.png)
 
 ## Using existing measurements
 -- API for pulling measurements
