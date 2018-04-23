@@ -17,7 +17,7 @@ Using RIPE Atlas, one can perform a number of Internet measurements, like `ping`
 ## User-defined Measurements
 In this sub-section we will discuss the process of launching one's measurements using RIPE Atlas. First step is to create an API key via the RIPE Atlas website. While logged in withyour credentials, navigate to [https://atlas.ripe.net/keys/](https://atlas.ripe.net/keys/). Click on the "Create API Key" Button:
 
-![alt text] (https://github.com/racheesingh/ripe-atlas-starter/blob/master/api-create-key.png "create api key")
+![alt text] (https://octodex.github.com/images/yaktocat.png "create api key")
 
 ## Using existing measurements
 -- API for pulling measurements
