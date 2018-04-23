@@ -21,7 +21,7 @@ In this sub-section we will discuss the process of launching one's measurements 
 
 This should lead to a page where you can add the name of your API key and what permissions you want to give to it. The important thing to note here is that you should select "Schedule a new measurement" for this key if you want to use it for scheduling your own measurements. The filled form should look like this:
 
-![alt text](https://github.com/racheesingh/ripe-atlas-starter/blob/master/add-api-key.png "add api key"){:width="50%"}
+![alt text](https://github.com/racheesingh/ripe-atlas-starter/blob/master/add-api-key.png "add api key" =100x100)
 
 
 ## Using existing measurements
